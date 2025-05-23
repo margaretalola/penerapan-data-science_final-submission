@@ -4,3 +4,4 @@ matplotlib==3.7.5
 seaborn==0.12.2
 pandas==2.2.3
 scikit-learn==1.6.1
+category_encoders==2.8.1
