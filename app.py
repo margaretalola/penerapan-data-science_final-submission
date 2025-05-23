@@ -113,7 +113,7 @@ FEATURES = {
 
 # --- Load model ---
 try:
-    model = joblib.load("model\model_selected_features.joblib") 
+    model = joblib.load("model/model_selected_features.joblib") 
     st.success("Model berhasil dimuat!")
 except FileNotFoundError:
     st.error("Error: File 'model.joblib' tidak ditemukan.")
