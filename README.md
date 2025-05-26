@@ -58,7 +58,7 @@ Ringkasan Utama:
 - Enrolled Student: 794
 - Student with Special Needs: 51
 
-![Alt text](image.png)
+![Alt text](margaretalola_dicoding.png)
 
 Pada Distribusi Status Mahasiswa, terlihat lebih dari sepertiga mahasiwa tidak menyelesaikan studi mereka (32.1%).
 
@@ -74,7 +74,7 @@ Jurusan lain dengan angka mahasiswa cukup tinggi:
 
 **Untuk Distribusi Beasiswa**, hanya 1099 mahasiswa adalah penerima beasiswa, sedangkan 3,325 mahasiswa tidak mendapat beasiswa. Tingkat dropout lebih tinggi ditemukan pada **mahasiswa yang tidak menerima beasiswa.**
 
-![Alt text](image-1.png)
+![Alt text](margaretalola_dicoding-1.png)
 
 Dashboard juga menunjukkan bahwa jumlah mahasiswa dropout cukup tinggi bahkan di daerah dengan tingkat pengangguran rendah. Contohnya, pada daerah dengan unemployment rate 7.6%, terdapat 202 mahasiswa yang keluar.
 
