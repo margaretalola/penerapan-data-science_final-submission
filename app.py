@@ -4,7 +4,6 @@ import joblib
 import matplotlib.pyplot as plt
 import io
 
-# --- Definisi Fungsi make_prediction (PINDAHKAN KE ATAS) ---
 def make_prediction(input_df):
     try:
         predictions = model.predict(input_df)
@@ -16,9 +15,6 @@ def make_prediction(input_df):
         st.warning("Pastikan fitur-fitur yang Anda masukkan sesuai dengan yang diharapkan oleh model dan urutan kolomnya benar.")
         return None, None
 
-# --- Bagian Konfigurasi (Sesuaikan dengan fitur model Anda) ---
-# Daftar fitur yang diharapkan oleh model Anda.
-# Ganti dengan nama fitur yang sebenarnya dari model Anda.
 FEATURES = {
     "Numerical": [
         "Age_at_enrollment",
@@ -202,18 +198,14 @@ elif input_option == "Upload File CSV":
                 st.subheader("📊 Data dari File CSV")
                 st.write(input_df)
 
-                # Tambahkan tombol prediksi untuk upload file
                 if st.button("🔮 Prediksi (File)"):
-                    # Pilih hanya kolom yang dibutuhkan model
                     input_df = input_df[all_features_order]
 
                     # Lakukan prediksi untuk setiap baris
                     predictions, probabilities = make_prediction(input_df)
 
                     if predictions is not None:
-                        # Tambahkan kolom prediksi dan probabilitas ke DataFrame
                         input_df["Prediksi Dropout"] = predictions
-                        # Buat fungsi untuk mendapatkan probabilitas yang sesuai
                         def get_probability(row):
                             if row["Prediksi Dropout"] == 0:
                                 return probabilities[row.name][0]
@@ -227,9 +219,9 @@ elif input_option == "Upload File CSV":
                         # Map nilai prediksi ke label yang sesuai
                         status_mapping = {0: "Dropout", 1: "Enrolled", 2: "Graduate"}
                         input_df["Prediksi"] = input_df["Prediksi Dropout"].map(status_mapping)
-                        # Tampilkan DataFrame dengan hasil prediksi
+
                         st.subheader("📝 Hasil Prediksi per Mahasiswa")
-                        st.write(input_df[["Prediksi", "Probabilitas"]])  # Tampilkan hanya kolom Prediksi dan Probabilitas
+                        st.write(input_df[["Prediksi", "Probabilitas"]]) 
 
                         # Hitung Persentase Dropout
                         dropout_count = (input_df["Prediksi Dropout"] == 0).sum()
@@ -245,7 +237,7 @@ elif input_option == "Upload File CSV":
                         fig1, ax1 = plt.subplots()
                         ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
                                 shadow=True, startangle=90)
-                        ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+                        ax1.axis('equal') 
                         st.pyplot(fig1)
 
 
@@ -255,4 +247,3 @@ elif input_option == "Upload File CSV":
             st.error("Error memparsing file CSV. Pastikan formatnya benar.")
         except Exception as e:
             st.error(f"Error saat memproses file CSV: {e}")
-
